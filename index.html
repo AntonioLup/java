@@ -3,16 +3,18 @@
 
 <head>
     <meta charset="UTF-8">
+    <title>Portafolios</title>
     <link rel="stylesheet" href="css.css">
     <link rel="icon" href="arm-wrestling.png">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.4.2/gsap.min.js"></script>
     <script src="https://kit.fontawesome.com/5fdf4ff657.js" crossorigin="anonymous"></script>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
-    <title>Portafolios</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js"></script>
+    
 </head>
 
 
@@ -21,6 +23,10 @@
 
 
     <div class="wrapper"></div>
+    <div class="wrapper_texto">
+        <p>Portafolio</p>
+    </div>
+    <div class="wrapper2"></div>
     <div class="loader"></div>
     <div class="container">
 
@@ -36,7 +42,7 @@
             <div class="left-col-block ">
                 <header class="header">
                     <div class="content text-center">
-                        <h1>Hola, me llamo <span class="move-down">Antonio López</span></h1>
+                        <h1>Hola, me llamo <span class="move-down animated">Antonio López</span></h1>
                         <p>Programador <span id="text"></span></p>
                         <ul class="social-icon">
                             <li><a href="#" class=" btnfos-5" target="_blank">
@@ -147,7 +153,7 @@
 
                             </div>
                         </div>
-
+        
                     </section>
                 </section>
 
@@ -171,9 +177,12 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="portafolio-item">
-                                    <a href="#">
+                                    <a href="https://antoniolup.github.io/Landing/?fbclid=IwAR0ktIFDe925fNb8ZY2flKLLbBZAuYzptSWU_FDZZlNiNGBG6nRvwVH8nec" target="_blank">
                                         <div class="portafolio-thumb">
-                                            <img alt="E-com" src="archite.jpg" alt="">
+                                            <div class="portafolio-thumb">
+                                                <img alt="E-com" src="Captura1.PNG" alt="">
+                                            </div>
+                                            
                                         </div>
                                         <div class="portafolio-info">
                                             <h3>Tienda Online</h3>
@@ -328,7 +337,7 @@
                 <!--modal-->
 
                 
-                
+
 
                 
                 <!--modal-->
@@ -348,9 +357,9 @@
                                 <div class="section-title">
                                     <h2>Antonio Jesús López Cabeo</h2>
                                 </div>
-
-
                             </div>
+                        </div>
+                    </div>
 
                 </section>
                 </main>
@@ -365,6 +374,20 @@
     <div class="cursor"></div>
     <div class="cursor-followe"></div>
 
+<script type="text/javascript" src="vanilla3d.js"></script>
+
+
+
+
+<script type="text/javascript">
+	VanillaTilt.init(document.querySelector("img"), {
+		max: 25,
+		speed: 400
+	});
+	
+	//It also supports NodeList
+	VanillaTilt.init(document.querySelectorAll("img"));
+</script>
 
     <script>
         var cursor = $(".cursor"),
@@ -433,10 +456,10 @@
     <script>
         const textrev = gsap.timeline();
 
-        textrev.from(".line span", 1, {
+        textrev.from(".line span", 2, {
             y: 200,
             ease: "power4.out",
-            delay: 1,
+            delay: 2.2,
             skewY: 10,
             stagger: {
                 amount: 0.4,
@@ -495,7 +518,7 @@
         const prog = "Front End.";
         let idx = 1;
 
-        setInterval(writeText, 300);
+        setInterval(writeText, 400);
 
         function writeText() {
             text.innerText = prog.slice(0, idx)
@@ -508,6 +531,8 @@
 
         }
     </script>
+   
+   
 
     
 <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
@@ -526,8 +551,26 @@
     TweenMax.to(".wrapper", 1, {
         top: "-100%",
         ease: Expo.easeInOut,
-        delay: .2
+        delay: .4
     });
+    TweenMax.to(".wrapper2", 1, {
+        top: "-100%",
+        ease: Expo.easeInOut,
+        delay: .5
+    });
+    TweenMax.to(".wrapper_texto", 1, {
+        top: "-100%",
+        ease: Expo.easeInOut,
+        delay: .3
+    });
+    
+TweenMax.to(".wrapper_texto p", 1, {
+        top: "100%",
+        ease: Expo.easeInOut,
+        delay: .5
+    });
+
+
 
     var tl = new TimelineMax();
 
